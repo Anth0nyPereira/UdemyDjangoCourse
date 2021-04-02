@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(192, 144, 13);
+    color: yellowgreen
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+th {
+    width: 20%;
+    text-align: left;
+}
+
+td {
+    width: 20%;
+    text-align: left;
+}
+
+#shop {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.indexProduct {
+    width: 50px;
+    text-align: left;
+}

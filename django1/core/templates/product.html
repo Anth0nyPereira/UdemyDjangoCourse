@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+<body>
+    <h1>{{ product.name }}</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="{% url 'index'%}">{{ product.name }}</a></td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.stock }}</td>
+                <!-- o nome que tu usas aqui do product é o nome da chave "product" que colocaste no context -->
+            </tr>
+        </tbody>
+    </table>
+    <br/><br/><br/>
+    <img src= "{% static product.path %}">
+</body>
+</html>

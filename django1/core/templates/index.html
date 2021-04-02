@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django 1 - Index</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <center>
+    <h1>Disc Store</h1>
+    <img src="{% static 'images/disc.png' %}"/>
+
+    <h2>{{ curso }}</h2>
+    <p>{{ geek }}</p>
+    <span>{{login}}</span>
+
+    <br/><br/>
+
+    <table id="shop">
+        <thead>
+            <tr>
+                <th class="indexProduct">Product</th>
+                <th class="indexProduct">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products%}
+            <tr>
+                <!--o nome 'product' aqui refere-se ao name que deste no urls.py e nao à view (eu mudei para xuxa)-->
+                <td class="indexProduct"><a href="{% url 'xuxa' product.id %}">{{ product.name }}</a></td>
+                <td class="indexProduct">{{ product.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br/><br/><br/>
+    <button onclick="moreInfo()">+info</button>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    </center>
+</body>
+</html>
